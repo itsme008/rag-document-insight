@@ -1,27 +1,39 @@
-# RAG Document Insight
+# RAG Document Insight 🚀
 
-This project implements a Retrieval-Augmented Generation (RAG) system using Streamlit, LangChain, and Groq. It allows users to upload PDF documents and ask questions about their content.
+**RAG Document Insight** is a high-performance Retrieval-Augmented Generation (RAG) system built with Streamlit, LangChain, and Groq. It allows you to upload PDF documents and have natural, multi-turn conversations about their content with extreme speed and accuracy.
 
-## Features
-- **PDF Upload**: Easily upload and process PDF documents.
-- **Efficient Chunking**: Uses `RecursiveCharacterTextSplitter` for optimal context retrieval.
-- **Fast Embeddings**: Leverages HuggingFace embeddings (`all-MiniLM-L6-v2`).
-- **High-Performance Inference**: Powered by Groq's `llama-3.1-8b-instant`.
-- **(New) Chat History**: Supports multi-turn conversations for interactive Q&A.
-- **(New) Smart Retrieval**: Automatically adjusts retrieval depth for summary-type queries.
+## ✨ Key Features
+- **💬 Multi-turn Chat**: Remembers previous context for a true conversational experience.
+- **📄 PDF Intelligence**: Deeply analyzes uploaded PDFs using advanced chunking strategies.
+- **⚡ Blazing Fast**: Powered by Groq's Llama 3.1 (8B) for near-instant responses.
+- **🔍 Smart Retrieval**: Automatically scales context depth based on whether you're asking for a summary or a specific detail.
+- **🛡️ Rate Limited**: Built-in protection (5 queries/min) to manage API usage effectively.
+- **☁️ Cloud Ready**: Optimized for seamless deployment on Streamlit Cloud.
 
-## Setup
+## 🛠️ Tech Stack
+- **Frontend**: Streamlit
+- **Orchestration**: LangChain
+- **Embeddings**: HuggingFace (`all-MiniLM-L6-v2`)
+- **Vector Store**: FAISS
+- **LLM**: Groq (Llama-3.1-8b-instant)
 
+## 🚀 Getting Started
+
+### 1. Prerequisites
+- Python 3.9+
+- A Groq API Key (Get it at [console.groq.com](https://console.groq.com/))
+
+### 2. Local Setup
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/ai-document-intelligence.git
-    cd ai-document-intelligence
+    git clone https://github.com/itsme008/rag-document-insight.git
+    cd rag-document-insight
     ```
 
 2.  **Create a virtual environment**:
     ```bash
     python -m venv venv
-    source venv/bin/activate  # On macOS/Linux
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
     ```
 
 3.  **Install dependencies**:
@@ -29,22 +41,26 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Stre
     pip install -r requirements.txt
     ```
 
-4.  **Configure environment variables**:
-    Create a `.env` file in the root directory and add your Groq API key:
+4.  **Configure Environment**:
+    Create a `.env` file in the root directory and add your key:
     ```env
-    GROQ_API_KEY=your_api_key_here
+    GROQ_API_KEY=your_groq_api_key_here
     ```
 
-5.  **Run the application**:
+5.  **Run the App**:
     ```bash
     streamlit run app/app.py
     ```
 
-## Project Structure
-- `app/`: Contains the application logic.
-- `data/`: Folder for sample documents.
-- `faiss_index/`: Local storage for the FAISS vector database.
-- `notebooks/`: Prototyping and exploration notebooks.
+### 3. Deployment (Streamlit Cloud)
+When deploying to Streamlit Cloud, add your `GROQ_API_KEY` to the **Secrets** section in the dashboard:
+```toml
+GROQ_API_KEY = "your_groq_api_key_here"
+```
 
-## Security Note
-The `.env` file is excluded from version control via `.gitignore` to prevent API key leaks.
+## 🔒 Security
+- `.env` files and `faiss_index` are excluded from Git to prevent data leaks.
+- Temporary files are automatically cleaned up after processing.
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
