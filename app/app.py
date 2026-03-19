@@ -26,7 +26,7 @@ if not api_key:
 
 st.set_page_config(page_title="RAG Document Insight", page_icon="📄")
 st.title("📄 RAG Document Insight")
-st.markdown("Upload a PDF and ask questions about it! (Multi-turn chat enabled)")
+st.markdown("Upload a PDF and ask questions about it!")
 
 @st.cache_resource
 def load_model():
