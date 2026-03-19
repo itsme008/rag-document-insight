@@ -15,8 +15,8 @@ from langchain_core.messages import HumanMessage, AIMessage
 
 load_dotenv()
 
-st.set_page_config(page_title="AI Document Intelligence", page_icon="📄")
-st.title("📄 AI Document Intelligence")
+st.set_page_config(page_title="RAG Document Insight", page_icon="📄")
+st.title("📄 RAG Document Insight")
 st.markdown("Upload a PDF and ask questions about it! (Multi-turn chat enabled)")
 
 @st.cache_resource

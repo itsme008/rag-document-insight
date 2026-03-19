@@ -1,4 +1,4 @@
-# AI Document Intelligence (RAG)
+# RAG Document Insight
 
 This project implements a Retrieval-Augmented Generation (RAG) system using Streamlit, LangChain, and Groq. It allows users to upload PDF documents and ask questions about their content.
 
