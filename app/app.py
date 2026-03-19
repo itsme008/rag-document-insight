@@ -15,6 +15,15 @@ from langchain_core.messages import HumanMessage, AIMessage
 
 load_dotenv()
 
+# Try to get API key from environment, fallback to Streamlit Secrets
+api_key = os.getenv("GROQ_API_KEY")
+if not api_key and "GROQ_API_KEY" in st.secrets:
+    api_key = st.secrets["GROQ_API_KEY"]
+
+if not api_key:
+    st.error("GROQ_API_KEY not found. Please set it in your .env file or Streamlit Secrets.")
+    st.stop()
+
 st.set_page_config(page_title="RAG Document Insight", page_icon="📄")
 st.title("📄 RAG Document Insight")
 st.markdown("Upload a PDF and ask questions about it! (Multi-turn chat enabled)")
